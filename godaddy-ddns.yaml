@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerregistry.openprint.org:5000/godaddy-ddns:v1
+  labels:
+    app: dockerregistry.openprint.org:5000/godaddy-ddns:v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dockerregistry.openprint.org:5000/godaddy-ddns:v1
+  template:
+    metadata:
+      labels:
+        app: dockerregistry.openprint.org:5000/godaddy-ddns:v1
+    spec:
+      containers:
+      - name: dockerregistry.openprint.org:5000/godaddy-ddns:v1
+        image: dockerregistry.openprint.org:5000/godaddy-ddns:v1
+        ports:
+        - containerPort: 8950
